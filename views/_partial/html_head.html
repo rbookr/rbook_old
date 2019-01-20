@@ -1,0 +1,23 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="<%= page.description || '' %>">
+  <meta name="author" content="<%= config.author || '' %>">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="<%= page.title || config.title || '' %>"/>
+  <meta property="og:description" content="<%= page.description || config.description || '' %>" />
+  <meta property="og:site_name" content="<%= config.title || '' %>"/>
+  <meta property="og:type" content="<%= page.title ? 'article' : 'website' %>" />
+  <meta property="og:image" content="<%= config.url %><%= config.cover %>"/>
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- Site Title -->
+  <title><%- config.title %></title>
+
+  <!--css -->
+  <% for (let link of config.css) {%>
+    <link rel="stylesheet" href="<%- link %>" />
+  <% }%>
+
+</head>

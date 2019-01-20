@@ -1,0 +1,11 @@
+author: Rainboy
+title: Rbook
+url: /
+cover: http://getbootstrap.com/docs/4.2/assets/brand/bootstrap-social.png
+
+description: Rbook,Rainboy写的关于Noi的电子书
+
+css:
+    - https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css
+    - /app.css
+    - /style.light.css
