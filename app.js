@@ -45,6 +45,11 @@ app.use(serve(__dirname + '/public'),{
     maxage:7*24*60*60*1000
 });
 
+//serve files from ./public:
+app.use(serve(__dirname + '/Rmarkdown/css'),{
+    maxage:7*24*60*60*1000
+});
+
 const route = require('./routes/index')
 const cors = require('@koa/cors');
 
