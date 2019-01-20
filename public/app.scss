@@ -1,4 +1,37 @@
-.body {
-     background:red;
+
+.catalog li {
+    list-style-type:none;
+
+    a {
+        color: #020202;
+        display:flex;
+        white-space: nowrap;
+        justify-content: space-between ;
+        margin:5px 0 ;
+
+        &:hover {
+            color: darkblue;
+            text-decoration:underline;
+        }
+        span.title {
+            overflow-x:hidden;
+            &:after {
+                content:"..................................................................................................................................................................................";
+            }
+
+
+        }
+
+        span {
+            display:flex;
+            align-items:  center ;
+        }
+    }
 }
 
+.markdown-body {
+
+    p >code {
+        background:#666;
+    }
+}

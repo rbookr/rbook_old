@@ -7,12 +7,12 @@
   var pageSubtitle = '';
   var siteMenuClass = 'site-menu';
 
-  if (theme.use_header_cover) {
+  if (config.use_header_cover) {
     headerClass += ' header-background';
     if (config.root === '/') {
-      headerStyle = 'background-image: url(' + theme.index_cover + ')';
+      headerStyle = 'background-image: url(' + config.index_cover + ')';
     } else {
-      headerStyle = 'background-image: url(' + config.root + theme.index_cover + ')';
+      headerStyle = 'background-image: url(' + config.root + config.index_cover + ')';
     }
     pageTitleClass += ' with-background-image';
     siteMenuClass += ' with-background-image';
@@ -39,14 +39,15 @@
         </div>
         <div class="<%= siteMenuClass %>">
           <ul>
-            <% for (var i in theme.menu){ %>
+            <% for (var i in config.menu){ %>
               <li>
-                <a href="<%- theme.menu[i].url ? url_for(theme.menu[i].url) : url_for(theme.menu[i]) %>">
-                  <% if (theme.menu[i].icon) { %>
-                  <i class="fa fa-<%= theme.menu[i].icon %> fa-stack-2x"></i>
+                <a href="<%- config.menu[i].url %>">
+                  <% if (config.menu[i].icon) { %>
+                  <i class="fa fa-<%= config.menu[i].icon %>"></i>
                   <% } else { %>
                   <%= i %>
                   <% } %>
+                  <%= config.menu[i].name %>
                 </a>
               </li>
             <% } %>

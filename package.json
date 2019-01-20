@@ -7,6 +7,7 @@
     "debug": "DEBUG=debug PORT=4040 ./node_modules/.bin/nodemon bin/www",
     "scss": "sass  --no-source-map public/app.scss public/app.css",
     "scssw": "sass --no-source-map --watch public/app.scss public/app.css",
+    "c_style":"stylus source/css/style.light.styl -o public",
     "pm2": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

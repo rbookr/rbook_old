@@ -1,13 +1,20 @@
 author: Rainboy
 title: Rbook
 url: /
-cover: http://getbootstrap.com/docs/4.2/assets/brand/bootstrap-social.png
+cover: https://ww1.sinaimg.cn/large/007i4MEmgy1fzdgqrhivxj30q40dhq3k.jpg
 
 description: Rbook,Rainboy写的关于Noi的电子书
 
+
+# GIT配置相关
+book_path: /home/rainboy/tmp/noipbook
+
+
 css:
+    - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
     - https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css
     - https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css
+    - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css
     - /app.css
     - /style.light.css
     - /codeHighlight.css
@@ -15,7 +22,25 @@ css:
     - /github-markdown.css
 
 js:
+    - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
     - https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js
     - /js/clipboard.promise.js
     - /js/CLIPBOARD.js
 
+menu:
+    - 
+        url: /
+        name: 主页
+        icon: home
+    - 
+        url: /catalog
+        name: 总目录
+        icon: list-alt
+    - 
+        url: /about
+        name: 关于
+        icon: info-circle
+
+
+## theme 相关
+use_header_cover: true

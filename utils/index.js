@@ -4,6 +4,8 @@ const fs = require("fs")
 const md5 = require("md5")
 const yaml = require("js-yaml")
 const loadConfig = require("./loadConfig.js")
+const loadCatalog = require("./loadCatalog.js")
+const readFile = require("./readFile.js")
 
 global.nav = {} // if nav[key] == string   subnav[key] 就是 对应的obj
 global.subnav = {}  // subnav[key] = md5_str  md5_map_path[ md5_str] 就是对应的路径
@@ -136,18 +138,6 @@ function ensureFile(_path){
     })
 }
 
-function readFile(_path){
-    return new Promise( (res,rej)=>{
-        fs.readFile(_path,{encoding:'utf-8'},(err,data)=>{
-            if(err) 
-                rej(err)
-            else
-                res(data)
-        })
-    })
-}
-
-
 
 const rFrontMatter = /^(-{3,}|;{3,})[\n,\r]{1,2}([\s\S]+?)[\n,\r]{1,2}\1(?:$|[\n,\r]{1,2}([\s\S]*)$)/;
 /* 分割文件 YAML信息头 和 真实内容*/
@@ -187,12 +177,14 @@ async function parseArticle(_path){
             content:''
         }
     }
-
 }
+
 module.exports = {
     genNav:genNav,
     genSubNav:genSubNav,
     imagePath_translate,
     parseArticle,
-    loadConfig
+    loadConfig,
+    loadCatalog,
+    readFile
 }

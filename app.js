@@ -17,6 +17,18 @@ global.debug = require('debug')('debug');
 global.U = require('./utils/index.js')
 
 global.C = U.loadConfig()
+U.loadCatalog().then( d=>{
+    global.Catalog = d
+
+    global.hash_2_path = {} //hash 对应的path
+
+
+    for( let item of d){
+        let {hash,path} = item
+        hash_2_path[hash] = path
+    }
+})
+
 
 let _redis = require('./redis/index.js')
 global.redis = new _redis()

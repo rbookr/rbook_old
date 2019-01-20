@@ -1,3 +1,28 @@
-.body {
-  background: red;
+.catalog li {
+  list-style-type: none;
+}
+.catalog li a {
+  color: #020202;
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+.catalog li a:hover {
+  color: darkblue;
+  text-decoration: underline;
+}
+.catalog li a span.title {
+  overflow-x: hidden;
+}
+.catalog li a span.title:after {
+  content: "..................................................................................................................................................................................";
+}
+.catalog li a span {
+  display: flex;
+  align-items: center;
+}
+
+.markdown-body p > code {
+  background: #666;
 }
