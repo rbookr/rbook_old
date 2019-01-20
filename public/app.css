@@ -1,6 +1,9 @@
 .catalog li {
   list-style-type: none;
 }
+.catalog li.catalog-main {
+  font-weight: bold;
+}
 .catalog li a {
   color: #020202;
   display: flex;

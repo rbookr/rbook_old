@@ -8,16 +8,16 @@ module.exports = async function(_id){
     //加1
     let cnt = await this.redis.incr(this.cntKey(_id))
 
-    let _path = pathFn.relative(C.book_path , pathFn.dirname(md5_map_path[_id]))
 
     if( head == null || content == null){
 
-        let {head,content} = await U.parseArticle(md5_map_path[_id])
+        let _path = pathFn.join(C.book_path , hash_2_path[_id])
+        let {head,content} = await U.parseArticle(_path)
 
-        content = U.imagePath_translate(content,'/'+_path)
-        await this.redis.set(this.headKey(_id),head)
-        await this.redis.set(this.contentKey(_id),content)
+        //content = U.imagePath_translate(content,'/'+_path)
 
+        await this.redis.set(this.headKey(_id),head,'EX',C.redis_key_ttl)
+        await this.redis.set(this.contentKey(_id),content,'Ex',C.redis_key_ttl)
         return {head:JSON.parse(head || '{}'),content,cnt}
     }
 

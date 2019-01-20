@@ -18,15 +18,12 @@ router.get('/', async (ctx, next) => {
     
     let index_file_path = pathFn.join(C.book_path,'readme.md')
 
-    let post  = {
-        cover : "https://ww1.sinaimg.cn/large/007i4MEmgy1fzdgx5suh8j315o0dw4qp.jpg",
-        title:'主页',
-        content:''
-    }
 
-    let _content = await U.readFile(index_file_path)
-
-    post.content = Rmarkdown.render(_content)
+    //let _content = await U.readFile(index_file_path)
+    //
+    let post = await redis.getArticle('readme')
+    
+    
 
     await ctx.render('article',{
         page:{},

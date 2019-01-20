@@ -27,6 +27,11 @@ U.loadCatalog().then( d=>{
         let {hash,path} = item
         hash_2_path[hash] = path
     }
+
+    //主页
+    hash_2_path['readme'] = 'readme.md'
+    //关于
+    hash_2_path['about'] = 'about.md'
 })
 
 
