@@ -23,6 +23,9 @@
     if (config.subtitle) pageSubtitle = config.subtitle;
   } else if (headerType === 'post') {
     if (post.head && post.head.cover) headerStyle = 'background-image: url(' + post.head.cover + ')';
+    else
+        headerStyle = 'background-image: url(' + config.cover + ')';
+
     pageTitle = post.head.title || __('untitled_post');
   } else if (headerType === 'archive') {
     pageTitle = __('archive_title');
