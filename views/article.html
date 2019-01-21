@@ -9,11 +9,14 @@
         <div class="post-info text-muted">
           <% if (config.author) { %>
             <!-- Author -->
-            <span class="author info">By <%- config.author %></span>
+            <span class="author info">By <%- post.author || config.author %></span>
           <% } %>
           <!-- Date -->
           <span class="date-time info">On
             <span class="date"><%= post.head.update || '末知' %></span>
+          </span>
+          <span class="date-time info"> 浏览:
+            <span class="date"><%= post.visited  || 0  %></span>
           </span>
           <% if (post.categories && post.categories.length){ %>
           <!--  Categories  -->

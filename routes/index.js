@@ -43,5 +43,8 @@ router.get('/article/:hash',loadCatalog, require("./methods/article.js"))
 router.get('/catalog', loadCatalog,require("./methods/catalog.js"))
 router.get('/about', loadCatalog,require("./methods/about.js"))
 
+/* 更新 */
+router.post('/update',require("./methods/update.js"))
+
 
 module.exports = router

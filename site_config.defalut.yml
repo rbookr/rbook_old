@@ -8,9 +8,15 @@ description: Rbook,Rainboy写的关于Noi的电子书
 
 # GIT配置相关
 book_path: /home/rainboy/tmp/noipbook
+# git 书的地址
+# 参考 https://www.cnblogs.com/52cik/p/git-https.html
+git_book_hub: https://xxx
+# 触发的token
+token: mytoken
 
 # redis 保存的时间 s
 redis_key_ttl: 1200
+
 
 
 css:

@@ -23,6 +23,8 @@ module.exports = async (ctx,next)=>{
 
     let post = await redis.getArticle(hash)
 
+    post.visited = await redis.getCnt(hash)
+
     await ctx.render('article',{
         page:{},
         post
