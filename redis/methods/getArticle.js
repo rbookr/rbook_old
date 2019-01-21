@@ -11,6 +11,7 @@ module.exports = async function(_id){
 
     if( head == null || content == null){
 
+        let hash_2_path = await this.hash_2_path()
         let _path = pathFn.join(C.book_path , hash_2_path[_id])
         let {head,content} = await U.parseArticle(_path)
 

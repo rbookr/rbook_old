@@ -17,26 +17,12 @@ global.debug = require('debug')('debug');
 global.U = require('./utils/index.js')
 
 global.C = U.loadConfig()
-U.loadCatalog().then( d=>{
-    global.Catalog = d
-
-    global.hash_2_path = {} //hash 对应的path
-
-
-    for( let item of d){
-        let {hash,path} = item
-        hash_2_path[hash] = path
-    }
-
-    //主页
-    hash_2_path['readme'] = 'readme.md'
-    //关于
-    hash_2_path['about'] = 'about.md'
-})
 
 
 let _redis = require('./redis/index.js')
 global.redis = new _redis()
+
+redis.loadCatalog()
 
 
 /* ejs 模板 */
@@ -74,19 +60,13 @@ const cors = require('@koa/cors');
 // error handler
 onerror(app)
 
-//cors
-app.use(cors(
-    {
-    origin:'http://localhost:8080',
-    credentials:true
-    }
-));
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))
 app.use(json())
 app.use(logger())
+
 
 
 // logger

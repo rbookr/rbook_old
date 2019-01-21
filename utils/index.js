@@ -126,16 +126,7 @@ function imagePath_translate(html,path){
 
 
 function ensureFile(_path){
-    return new Promise( (res,rej)=>{
-        fs.stat(_path,(err,stat)=>{
-            if(err) rej(err)
-
-            if( stat.isFile())
-                res()
-            else
-                rej()
-        })
-    })
+    return fs.existsSync(_path)
 }
 
 
@@ -161,21 +152,16 @@ function splitOld(str){
 }
 
 async function parseArticle(_path){
-    try{
-        await ensureFile(_path)
-        let con = await readFile(_path)
-        let {data:head,content} = split(con)
-        return {
-            head:JSON.stringify( yaml.safeLoad(head)),
-            content:Rmarkdown.render(content)
-        }
+    let exists = ensureFile(_path)
+    if(!exists){
+        throw('文件不存在!')
+        return
     }
-    catch(e){
-
-        return {
-            head:'{}',
-            content:''
-        }
+    let con = await readFile(_path)
+    let {data:head,content} = split(con)
+    return {
+        head:JSON.stringify( yaml.safeLoad(head)),
+        content:Rmarkdown.render(content)
     }
 }
 

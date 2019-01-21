@@ -29,3 +29,13 @@
 .markdown-body p > code {
   background: #666;
 }
+
+.not-found {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.not-found a {
+  color: blue;
+}

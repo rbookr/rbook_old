@@ -3,6 +3,7 @@
 module.exports = async function(ctx,next){
 
     //通过 redis 来读取文章
+    
     await ctx.render('catalog',{
         post:{
             head:{
@@ -10,7 +11,7 @@ module.exports = async function(ctx,next){
             }
         },
         page:{},
-        Catalog
+        Catalog:ctx.Catalog
     })
 
 }
