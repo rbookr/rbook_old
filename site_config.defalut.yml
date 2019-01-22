@@ -8,10 +8,10 @@ description: Rbook,Rainboy写的关于Noi的电子书
 
 
 # GIT配置相关
-book_path: /home/rainboy/tmp/noipbook
+book_path: xxx
 # git 书的地址
 # 参考 https://www.cnblogs.com/52cik/p/git-https.html
-git_book_hub: https://xxx
+git_book_hub: xxxx
 # 触发的token
 token: mytoken
 

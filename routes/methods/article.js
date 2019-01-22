@@ -7,8 +7,8 @@ module.exports = async (ctx,next)=>{
     let hash_2_map = await redis.Get('hash_2_map')
     let hash  = ctx.params.hash
     let _file_path = hash_2_map[hash].path
-    debug(_file_path)
 
+    debug(_file_path)
     if(!_file_path){
         //404
         await next()
@@ -16,8 +16,9 @@ module.exports = async (ctx,next)=>{
     }
 
 
+    if( pathFn.extname(_file_path) !== '.md')
+        _file_path += '.md'
 
-    debug(_file_path)
     if( !fs.existsSync( pathFn.join(C.book_path,_file_path))){
         // 404
         await next()

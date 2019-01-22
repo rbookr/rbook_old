@@ -7,6 +7,17 @@ const loadCatalog = require("./loadCatalog.js")
 
 module.exports = async function(book_path){
 
+
+    /* 进行git */
+    if( !fs.existsSync( C.book_path)){ //不存在
+        await U.git.clone()
+        debug("=========== clone 书本的仓库成功 !==========")
+    }
+    else {
+        await U.git.pull_master()
+        debug("=========== 更新 书本的仓库成功 !==========")
+    }
+
     book_path = book_path || C.book_path
     let nav = yaml.safeLoad( fs.readFileSync(book_path+'/nav.yaml',{encoding:'utf-8'}))
 

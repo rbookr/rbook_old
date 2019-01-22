@@ -3,7 +3,7 @@
 const yaml = require("js-yaml")
 const fs = require("fs")
 const path = require("path")
-const configs = ['site_config.defalut.yml']
+const configs = ['site_config.yml','site_config.defalut.yml']
 
 module.exports  = function(){
 

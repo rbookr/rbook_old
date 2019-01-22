@@ -1,14 +1,18 @@
 //初始化
 const { exec } = require('child_process');
 
-function execAsync(cmd){
+function execAsync(cmd,cwd){
     return new Promise( (res,rej)=>{
         exec(cmd,{
-            cwd:C.book_path
+            cwd: cwd || C.book_path
         },(err,stdout,stderr)=>{
             if(err) rej(err)
             res(stdout)
         })
+    }).catch( e=>{
+        console.error("====== git 发生错误")
+        console.error(e)
+        throw(e)
     })
 }
 
@@ -26,13 +30,20 @@ const last_commits= async (n=10)=>{
 }
 
 const pull_master = async ()=>{
-
     let out = await execAsync(`git pull origin master`)
     return out
 }
 
+const clone = async ()=> {
+    let cmd = `git clone ${C.git_book_hub} ${C.book_path}`
+    await execAsync(cmd,__dirname)
+}
+
+
 module.exports ={
     execAsync,
     git_init,
-    last_commits
+    last_commits,
+    clone,
+    pull_master
 }
