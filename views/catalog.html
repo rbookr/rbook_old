@@ -5,20 +5,35 @@
 <article>
   <div class="container typo">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <ul class="catalog">
-              <% for( let item of Catalog ){ %>
-              <li style="padding-left:<%= item.level*8%>px;" <% if(item.level == 0){%> class="catalog-main" <%}%> >
-                  <a href="<%= item.url %>"> 
-                      <span class="title"><%= item.title %> </span> 
-                      <span class="label label-info">
-<i class="fa fa-eye" aria-hidden="true"></i>&nbsp;
-                    <%= item.visited || 0 %>
-                      </span>
-                  </a>
-              </li>
-              <% } %>
-          </ul>
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 catalog-menu">
+          <% for( let catalog of Catalog ){ %>
+            <div>
+                <div class="catalog-title">
+                    <h1><%= catalog.name %> 
+
+                  &nbsp;&nbsp; <span class="menu-toggle"><i class="fa fa-plus-square"></i></span>
+                    </h1>
+                </div>
+                <div class="catalog-container">
+            <ul class="catalog" style="display:none;">
+                <% for( let item of catalog.list ){ %>
+                <li style="padding-left:<%= item.level*8%>px;" <% if(item.level == 0){%> class="catalog-main" <%}%> >
+                    <a href="<%= item.url %>"> 
+                        <% if(item.password) {%>
+                        <i class="fa fa-lock"></i>&nbsp;
+                        <%}%>
+                        <span class="title"><%= item.title %> </span> 
+                        <span class="label label-info">
+                      <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;
+                      <%= item.visited || 0 %>
+                        </span>
+                    </a>
+                </li>
+                <% } %>
+            </ul>
+                </div>
+            </div>
+         <% } %>
       </div>
     </div>
   </div>

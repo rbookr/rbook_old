@@ -5,6 +5,10 @@
   <body>
     <%- body %>
     <%- include('_partial/html_body_js.html') %>
+
+    <% if( post.type && post.type == 'password') { %>
+        <script src="/js/password.js"></script>
+    <% } %>
   </body>
 </html>
 

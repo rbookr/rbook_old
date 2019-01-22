@@ -5,6 +5,7 @@ const md5 = require("md5")
 const yaml = require("js-yaml")
 const loadConfig = require("./loadConfig.js")
 const loadCatalog = require("./loadCatalog.js")
+const loadAllCatalog = require("./loadAllCatalog.js")
 const readFile = require("./readFile.js")
 
 global.nav = {} // if nav[key] == string   subnav[key] 就是 对应的obj
@@ -97,6 +98,8 @@ function genSubNav(){
 function imagePath_translate(html,path){
     let cur_path = path || '/'
 
+    console.log(cur_path)
+
 
     if(cur_path.charAt(cur_path.length-1) !== '/') //最后一个字符
         cur_path += '/'
@@ -172,5 +175,6 @@ module.exports = {
     parseArticle,
     loadConfig,
     loadCatalog,
+    loadAllCatalog,
     readFile
 }

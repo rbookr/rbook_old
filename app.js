@@ -22,7 +22,8 @@ global.C = U.loadConfig()
 let _redis = require('./redis/index.js')
 global.redis = new _redis()
 
-redis.loadCatalog()
+/* app init */
+require("./app_init.js")
 
 
 /* ejs 模板 */

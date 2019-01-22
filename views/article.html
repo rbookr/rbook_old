@@ -9,7 +9,7 @@
         <div class="post-info text-muted">
           <% if (config.author) { %>
             <!-- Author -->
-            <span class="author info">By <%- post.author || config.author %></span>
+            <span class="author info">By <%- post.head.author || config.author %></span>
           <% } %>
           <!-- Date -->
           <span class="date-time info">On

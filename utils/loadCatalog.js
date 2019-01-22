@@ -1,5 +1,3 @@
-//最多使用3级目录 级别,当前路径,当前目录下的所有的子目录,父亲
-//name | 目录地址 
 const readline = require('readline');
 const path = require('path');
 const fs = require('fs');
@@ -18,14 +16,19 @@ const Parse_line = (line)=>{
     let hash = md5(path)
     let url = `/article/${hash}`
 
-    return {level,path,title,hash,url}
+    let password = false
+
+    if(/password$/.test(line))
+        password = true
+
+    return {level,path,title,hash,url,password}
 }
 
-const ReadLine = ()=>{
+const ReadLine = (_path)=>{
     return new Promise( (res,rej)=>{
     
         let lines = []
-        let filepath = path.join(C.book_path, "SUMMARY.md")
+        let filepath = path.join(_path)
         let input = fs.createReadStream(filepath)
 
         const rl = readline.createInterface({
@@ -46,16 +49,9 @@ const ReadLine = ()=>{
 }
 
 
+module.exports = function(_path){
 
-var parent = root
-
-var head = {
-}
-
-
-module.exports = function(){
-
-    return ReadLine().then( d=>{
+    return ReadLine(_path).then( d=>{
         /* 找到每一个元素的parentName */
         let parents = []
         for( let i = 0;i < d.length; i++){

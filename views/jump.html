@@ -1,0 +1,24 @@
+<div  class="jump password_background" style="background-image:url('<%= config.jump_background %>')">
+
+    <% var pre_url = '/' %>
+    <% if(post.success) { %>
+    <%  pre_url = post.pre_url %>
+    <p>成功!你将会在 <time><strong id="seconds">2</strong> 秒跳转</time>.</p>
+    <% } else {%>
+    <p>失败!你将会在 <time><strong id="seconds">2</strong> 秒跳转到首页</time>.</p>
+    <% } %>
+</div>
+
+<script>
+    var el = document.getElementById('seconds'),
+    total = el.innerHTML,
+    timeinterval = setInterval(function () {
+        total = --total;
+        el.textContent = total;
+        if (total <= 0) {
+            clearInterval(timeinterval);
+                                   // do redirect or something ~ 
+    window.location = "<%= pre_url || '/' %>";
+            }
+}, 1000);
+</script>

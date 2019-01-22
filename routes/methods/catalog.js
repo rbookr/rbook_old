@@ -6,16 +6,17 @@ module.exports = async function(ctx,next){
     let Catalog = ctx.Catalog
 
     for( let i = 0;i < Catalog.length;i++){
-        let {hash} = Catalog[i]
 
-        Catalog[i].visited = await redis.getCnt(hash)
-        console.log(Catalog[i].visited)
+        for( let item of Catalog[i].list){
+            item.visited = await redis.getCnt(item.hash)
+        }
     }
     
     await ctx.render('catalog',{
         post:{
             head:{
-                title:'总目录'
+                title:'总目录',
+                cover: C.catalog_cover || null
             }
         },
         page:{},

@@ -1,7 +1,8 @@
 author: Rainboy
 title: Rbook
 url: /
-cover: https://ww1.sinaimg.cn/large/007i4MEmgy1fzdgx5suh8j315o0dw4qp.jpg
+#cover: https://ww1.sinaimg.cn/large/007i4MEmgy1fzdgx5suh8j315o0dw4qp.jpg
+cover: https://ww1.sinaimg.cn/large/007i4MEmgy1fzf2b74ks0g30kw068jvf.jpg
 
 description: Rbook,Rainboy写的关于Noi的电子书
 
@@ -14,6 +15,7 @@ git_book_hub: https://xxx
 # 触发的token
 token: mytoken
 
+redis: redis://localhost/8  #使用数据库8
 # redis 保存的时间 s
 redis_key_ttl: 1200
 
@@ -25,25 +27,24 @@ css:
     - https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css
     - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css
     - /app.css
+    - /password.css
     - /style.light.css
     - /codeHighlight.css
     - /codeHighlightCopy.css
     - /github-markdown.css
+    - https://gitcdn.xyz/repo/sofish/typo.css/master/typo.css
 
 js:
     - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
     - https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js
     - /js/clipboard.promise.js
     - /js/CLIPBOARD.js
+    - /js/toggleMenu.js
 
 menu:
     - 
         url: /
         name: 主页
-        icon: home
-    - 
-        url: /catalog
-        name: 总目录
         icon: list-alt
     - 
         url: /about
@@ -53,3 +54,9 @@ menu:
 
 ## theme 相关
 use_header_cover: true
+
+
+catalog_cover: https://ww1.sinaimg.cn/large/007i4MEmgy1fzeo6efh5ig30lc074tb4.jpg
+password_background: https://ww1.sinaimg.cn/large/007i4MEmgy1fzenxp74yig30lc074qlw.jpg
+jump_background: https://ww1.sinaimg.cn/large/007i4MEmgy1fzfigktlheg30b4072nlu.jpg
+#jump_background: https://ww1.sinaimg.cn/large/007i4MEmgy1fzfhqrx8sqg30kw068448.jpg
