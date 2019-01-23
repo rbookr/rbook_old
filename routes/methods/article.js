@@ -33,6 +33,17 @@ module.exports = async (ctx,next)=>{
         }
     }
 
+    /* hash_2_map */
+    //subCatalogName: '语法篇',
+    //subCatalogIdx: 0,
+    //index: 27,
+    //title: '题目:
+
+    let {subCatalogIdx,index} = hash_2_map[hash]
+    
+    post.nextPage = ctx.Catalog[subCatalogIdx].list[index+1]
+    post.prePage = ctx.Catalog[subCatalogIdx].list[index-1]
+    
 
     /* 判断是否有密码 */
     if(post.head.password && post.head.password !== ''){

@@ -33,6 +33,14 @@
         <div class="post-content markdown-body">
           <%- post.content %>
         </div>
+
+        <%- include('_partial/pageNavigation.html',{
+                prePage :post.prePage,
+                nextPage: post.nextPage
+             }) %>
+        <br>
+        <br>
+
       </div>
     </div>
   </div>

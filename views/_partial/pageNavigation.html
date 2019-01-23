@@ -1,0 +1,19 @@
+<div class="pageNavigation">
+    <div class="presp">
+        <% if( prePage && prePage.url) { %>
+        <div>
+            <span class="previous"> <i class="fa fa-chevron-left"></i></span>
+            <span class="next"> <a href="<%= prePage.url %>">上一篇</a> </span>
+        </div>
+        <% } %>
+    </div>
+
+    <div class="presp">
+        <% if( nextPage && nextPage.url) { %>
+        <div>
+            <span class="previous"> <i class="fa fa-chevron-right"></i></span>
+            <span class="next"> <a href="<%= nextPage.url %>">下一篇</a> </span>
+        </div>
+        <% } %>
+    </div>
+</div>
