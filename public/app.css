@@ -106,6 +106,15 @@ pre code {
   display: flex;
   justify-content: space-between;
 }
+.pageNavigation a {
+  color: #fff !important;
+  text-decoration: none;
+}
+.pageNavigation a:hover {
+  background-color: transparent;
+  color: #fff !important;
+  text-decoration: none;
+}
 .pageNavigation div.presp {
   perspective: 500px;
   -webkit-perspective: 500px;

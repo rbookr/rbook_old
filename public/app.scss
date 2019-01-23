@@ -123,6 +123,16 @@ pre code {
     $borderColor:#224795;
     margin-bottom:40px;
     padding:0 50px;
+
+    a {
+        color: $color !important;
+        text-decoration:none;
+        &:hover {
+            background-color:transparent;
+            color: $color !important;
+            text-decoration:none;
+        }
+    }
     
 	height:30px;
 	cursor:pointer;
