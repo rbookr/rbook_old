@@ -11,10 +11,18 @@ const Parse_line = (line)=>{
 
     let regx2 = /\[(.*)\]\((.*)\)/
 
-    let title = line.match(regx2)[1]
-    let path = line.match(regx2)[2]
-    let hash = md5(path)
-    let url = `/article/${hash}`
+    let title,path,hash,url
+
+    try {
+        title = line.match(regx2)[1]
+        path = line.match(regx2)[2]
+        hash = md5(path)
+        url = `/article/${hash}`
+    }
+    catch(e){
+        console.error(e)
+        console.error(line)
+    }
 
     let password = false
 

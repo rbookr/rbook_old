@@ -27,6 +27,13 @@ module.exports = async (ctx,next)=>{
 
     let post = await redis.getArticle(hash)
 
+    if (post.head == 'undefined'){
+        post.head = {
+            title :hash_2_map[hash].title
+        }
+    }
+
+
     /* 判断是否有密码 */
     if(post.head.password && post.head.password !== ''){
         if( ctx.session.input_password !== post.head.password+''){
