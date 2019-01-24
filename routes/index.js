@@ -14,14 +14,6 @@ router.use( async function(ctx,next){
     ctx.state.date = function(val) {return val}
     ctx.state.time = function(val) {return val}
     await next()
-})  //404
-.use(async (ctx,next)=>{
-    await next();
-    if( ctx.status === 404){ await ctx.render('404',{
-            page:{},
-            post:{}
-        })
-    }
 })
 
 //router.get('/',async (ctx, next) => {

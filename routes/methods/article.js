@@ -6,6 +6,13 @@ module.exports = async (ctx,next)=>{
 
     let hash_2_map = await redis.Get('hash_2_map')
     let hash  = ctx.params.hash
+
+    if (!hash_2_map[hash] || !hash_2_map[hash].path){
+        //404
+        await next()
+        return
+    }
+
     let _file_path = hash_2_map[hash].path
 
     debug(_file_path)

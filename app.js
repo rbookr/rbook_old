@@ -66,6 +66,16 @@ const cors = require('@koa/cors');
 // error handler
 onerror(app)
 
+//404
+app.use( async (ctx,next)=>{
+    await next();
+    if( ctx.status === 404){ await ctx.render('404',{
+            page:{},
+            post:{}
+        })
+    }
+})
+
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
