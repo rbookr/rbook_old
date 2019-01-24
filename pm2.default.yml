@@ -1,5 +1,4 @@
 name: RbookServer
 script: bin/www
 env:
-    DEBUG: debug
     PORT: 4040

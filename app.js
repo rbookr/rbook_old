@@ -13,7 +13,12 @@ const redisStore = require('koa-redis');
 const serve = require('koa-static');
 
 global.debug = require('debug')('debug');
-//global.C = require("./config.default.js")
+global.isDebug = false
+if(process.env.DEBUG === 'debug'){
+    console.info("========= 调试模式 =========")
+    global.isDebug = true
+}
+
 global.U = require('./utils/index.js')
 
 global.C = U.loadConfig()
@@ -31,7 +36,7 @@ render(app, {
   root: pathFn.join(__dirname, 'views'),
   layout: 'layout',
   viewExt: 'html',
-  cache: false,
+  cache:  isDebug ? false : true,
   debug: false
 });
 

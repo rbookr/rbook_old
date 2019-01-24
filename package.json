@@ -5,11 +5,11 @@
   "scripts": {
     "start": "PORT=4040 node bin/www",
     "debug": "DEBUG=debug PORT=4040 ./node_modules/.bin/nodemon bin/www",
-    "pm2":"pm2 start pm2.yml",
+    "pm2": "pm2 start bin/www",
+    "repm2": "pm2 stop pm2.yml && pm2 restart pm2.yml",
     "scss": "sass  --no-source-map public/app.scss public/app.css",
     "scssw": "sass --no-source-map --watch public/app.scss public/app.css",
-    "c_style":"stylus source/css/style.light.styl -o public",
-    "pm2": "pm2 start bin/www",
+    "c_style": "stylus source/css/style.light.styl -o public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -37,6 +37,7 @@
   "devDependencies": {
     "install": "^0.12.2",
     "nodemon": "^1.8.1",
+    "pm2": "^3.2.9",
     "sass": "^1.16.1",
     "stylus": "^0.54.5"
   }

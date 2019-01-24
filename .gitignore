@@ -79,3 +79,4 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 site_config.yml
+pm2.yml
