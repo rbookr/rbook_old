@@ -26,18 +26,18 @@ css:
     - https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css
     - https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css
     - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css
+    - https://gitcdn.xyz/repo/sofish/typo.css/master/typo.css
+    - /style.light.css
     - /app.css
     - /password.css
-    - /style.light.css
     - /codeHighlight.css
     - /codeHighlightCopy.css
     - /github-markdown.css
-    - https://gitcdn.xyz/repo/sofish/typo.css/master/typo.css
 
 js:
     - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
     - https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js
-    - /js/clipboard.promise.js
+    - https://unpkg.com/clipboard-polyfill@2.7.0/build/clipboard-polyfill.promise.js
     - /js/CLIPBOARD.js
     - /js/toggleMenu.js
 

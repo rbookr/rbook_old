@@ -43,8 +43,8 @@ article {
   align-items: center;
 }
 
-.markdown-body p code {
-  background: #666;
+code {
+  background-color: #666;
   padding: 0 0.4rem;
 }
 
@@ -83,6 +83,10 @@ pre code {
 
 .catalog-title:hover h1 {
   color: blue;
+}
+
+footer {
+  padding: 0;
 }
 
 .footer a {
