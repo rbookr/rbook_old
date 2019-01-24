@@ -43,8 +43,9 @@ article {
   align-items: center;
 }
 
-.markdown-body code {
+.markdown-body p code {
   background: #666;
+  padding: 0 0.4rem;
 }
 
 .not-found {

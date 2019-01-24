@@ -50,9 +50,11 @@ article {
 }
 
 .markdown-body {
-
-    code {
-        background:#666;
+    p {
+        code {
+            background:#666;
+            padding:0 0.4rem;
+        }
     }
 }
 
