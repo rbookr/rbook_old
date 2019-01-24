@@ -1,3 +1,7 @@
+article {
+  margin-bottom: 80px !important;
+}
+
 .catalog-menu h1 {
   text-align: center;
 }
@@ -39,7 +43,7 @@
   align-items: center;
 }
 
-.markdown-body p > code {
+.markdown-body code {
   background: #666;
 }
 

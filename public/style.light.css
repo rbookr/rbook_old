@@ -1,7 +1,6 @@
 /* basic colors */
 /* theme colors */
 /* modify value of $theme-color to get different theme colors */
-@import '_typography/typo.css';
 .highlight {
   overflow: auto;
 }
