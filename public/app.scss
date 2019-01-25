@@ -181,12 +181,9 @@ footer {
 }
 
 .viz-contain {
-    margin:20px 0;
-    position:relative;
+    display:flex;
+    margin:2rem 0;
+    justify-content:center;
     > svg {
-        margin: 0 auto;
-        position:absolute;
-        left:50%;
-        transform: translate(-50%);
     }
 }
