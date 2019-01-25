@@ -1,0 +1,134 @@
+@charset "UTF-8";
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.catalog-menu .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.catalog-menu ol, .catalog-menu ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0 !important;
+}
+.catalog-menu a {
+  color: #a0f6aa;
+  text-decoration: none;
+}
+.catalog-menu h1 {
+  text-align: center;
+  width: 90%;
+  margin: 2em auto 0;
+  color: #507b55;
+  font-weight: bold;
+}
+.catalog-menu .cd-accordion-menu {
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
+}
+.catalog-menu .cd-accordion-menu li {
+  user-select: none;
+}
+.catalog-menu .cd-accordion-menu li span {
+  float: right;
+}
+.catalog-menu .cd-accordion-menu label, .catalog-menu .cd-accordion-menu a {
+  margin: 0;
+  position: relative;
+  display: block;
+  padding: 18px 18px 18px 45px;
+  box-shadow: inset 0 -1px #000;
+  color: #ffffff;
+}
+.catalog-menu .no-touch .cd-accordion-menu label:hover,
+.catalog-menu .no-touch .cd-accordion-menu a:hover {
+  background: #52565d;
+}
+.catalog-menu .cd-accordion-menu label::before,
+.catalog-menu .cd-accordion-menu label::after,
+.catalog-menu .cd-accordion-menu a::after {
+  /* icons */
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.catalog-menu .cd-accordion-menu label {
+  cursor: pointer;
+}
+.catalog-menu .cd-accordion-menu label span {
+  float: right;
+  color: #828282;
+}
+.catalog-menu .cd-accordion-menu li.file > label::before {
+  content: "";
+}
+.catalog-menu .cd-accordion-menu li.folder > label::before {
+  content: "";
+}
+.catalog-menu .cd-accordion-menu li.file > a::before {
+  content: "";
+}
+.catalog-menu .cd-accordion-menu li.add > label::before {
+  content: "";
+}
+.catalog-menu .cd-accordion-menu label::before {
+  /* arrow icon */
+  font: normal normal normal 14px/1 FontAwesome;
+  left: 18px;
+  transform: translateY(-50%);
+  transition: transform 0.3s;
+}
+.catalog-menu .cd-accordion-menu label.open::before {
+  transform: translateY(-25%) rotate(90deg);
+}
+.catalog-menu .cd-accordion-menu ul label,
+.catalog-menu .cd-accordion-menu ul a {
+  background: #000;
+  box-shadow: inset 0 -1px #141617;
+  padding-left: 82px;
+}
+.catalog-menu .no-touch .cd-accordion-menu ul label:hover,
+.catalog-menu .no-touch .cd-accordion-menu ul a:hover {
+  background: #3c3f45;
+}
+.catalog-menu .cd-accordion-menu > li:last-of-type > label,
+.catalog-menu .cd-accordion-menu > li:last-of-type > a,
+.catalog-menu .cd-accordion-menu > li > ul > li:last-of-type label,
+.catalog-menu .cd-accordion-menu > li > ul > li:last-of-type a {
+  box-shadow: none;
+}
+.catalog-menu .cd-accordion-menu ul label::before {
+  left: 36px;
+}
+.catalog-menu .cd-accordion-menu ul label::after,
+.catalog-menu .cd-accordion-menu ul a::after {
+  left: 59px;
+}
+.catalog-menu .cd-accordion-menu ul ul label,
+.catalog-menu .cd-accordion-menu ul ul a {
+  padding-left: 100px;
+}
+.catalog-menu .cd-accordion-menu ul ul label::before {
+  left: 54px;
+}
+.catalog-menu .cd-accordion-menu ul ul label::after,
+.catalog-menu .cd-accordion-menu ul ul a::after {
+  left: 77px;
+}
+.catalog-menu .cd-accordion-menu ul ul ul label,
+.catalog-menu .cd-accordion-menu ul ul ul a {
+  padding-left: 118px;
+}
+.catalog-menu .cd-accordion-menu ul ul ul label::before {
+  left: 72px;
+}
+.catalog-menu .cd-accordion-menu ul ul ul label::after,
+.catalog-menu .cd-accordion-menu ul ul ul a::after {
+  left: 95px;
+}

@@ -1,3 +1,4 @@
+const fs = require("fs")
 const Koa = require('koa')
 const app = new Koa()
 const views = require('koa-views')
@@ -11,6 +12,9 @@ const pathFn = require("path")
 const session = require('koa-generic-session');
 const redisStore = require('koa-redis');
 const serve = require('koa-static');
+
+//全局模式
+global.model = process.env.model || 'book'
 
 global.debug = require('debug')('debug');
 global.isDebug = false
@@ -59,7 +63,13 @@ app.use(serve(__dirname + '/Rmarkdown/css'),{
     maxage:7*24*60*60*1000
 });
 
-const route = require('./routes/index')
+//根据配置调用不同的route
+var route 
+var route_path  = pathFn.join(__dirname,'routes',model+'.js')
+if( fs.existsSync(route_path))
+    route = require(route_path)
+else
+    route = require('./routes/index')
 const cors = require('@koa/cors');
 
 

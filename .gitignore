@@ -79,4 +79,6 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 site_config.yml
+site_config.blog.yml
+site_config.book.yml
 pm2.yml

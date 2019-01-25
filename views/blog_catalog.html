@@ -1,0 +1,92 @@
+<link href="/blogCatalog.css" rel="stylesheet" type="text/css" /> 
+<%- include('_partial/header', {
+  headerType: 'post',
+  post: post
+}) %>
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 catalog-menu">
+
+          <div class="" id="app">
+              <ul class="cd-accordion-menu">
+                  <item :model="treeData" ref="first"></item>
+              </ul>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</article>
+
+<%- include('_partial/footer') %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+<script>
+
+var treeData = '<%- Catalog %>'
+
+Vue.component("item", {
+  template: `<li :class="[isFolder ? 'folder' : 'file']">
+    <a  v-if="!isFolder" :href="'article/'+model.hash">{{model.name}}</a>
+    <label
+      v-else
+      :class="{'open': open}"
+      @click="toggle"
+      >
+      {{ model.name }}
+      <span v-if="isFolder">{{ isFolder ? model.children.length : '' }}</span>
+    </label>
+    <ul v-show="open" v-if="isFolder" :class="{'open': open}">
+      <item
+        v-for="(model, index) in model.children"
+        :key="index"
+        :model="model">
+      </item>
+    </ul>
+  </li>`,
+  props: {
+    model: Object
+  },
+  data: function() {
+    return {
+      open: false
+    };
+  },
+  computed: {
+    isFolder: function() {
+      return this.model.children && this.model.children.length;
+    }
+  },
+  methods: {
+    toggle: function() {
+      if (this.isFolder) {
+        this.open = !this.open;
+      }
+    },
+    changeType: function() {
+      if (!this.isFolder) {
+        Vue.set(this.model, "children", []);
+        this.addChild();
+        this.open = true;
+      }
+    },
+    addChild: function() {
+      this.model.children.push({
+        name: "New Item"
+      });
+    }
+  }
+});
+
+new Vue({
+    el: "#app",
+    data: {
+        treeData: JSON.parse(treeData)
+    },
+    mounted(){
+        console.log('render ok')
+        console.log(this.$refs.first.toggle())
+    }
+});
+</script>

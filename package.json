@@ -5,10 +5,12 @@
   "scripts": {
     "start": "PORT=4040 node bin/www",
     "debug": "DEBUG=debug PORT=4040 ./node_modules/.bin/nodemon bin/www",
+    "debug_blog": "DEBUG=debug PORT=4044 model=blog ./node_modules/.bin/nodemon bin/www",
     "pm2": "pm2 start bin/www",
     "repm2": "pm2 stop pm2.yml && pm2 restart pm2.yml",
     "scss": "sass  --no-source-map public/app.scss public/app.css",
     "scssw": "sass --no-source-map --watch public/app.scss public/app.css",
+    "blog_catalog_scss": "sass --no-source-map --watch public/blogCatalog.scss public/blogCatalog.css",
     "c_style": "stylus source/css/style.light.styl -o public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

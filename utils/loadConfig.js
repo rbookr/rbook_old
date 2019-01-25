@@ -3,9 +3,11 @@
 const yaml = require("js-yaml")
 const fs = require("fs")
 const path = require("path")
-const configs = ['site_config.yml','site_config.defalut.yml']
+//const configs = ['site_config.yml','site_config.defalut.yml']
 
 module.exports  = function(){
+    
+    let configs = [`site_config.${global.model}.yml`,'site_config.yml','site_config.defalut.yml']
 
     for( let _p of configs){
         let _cp =  path.join(__dirname,'..',_p)

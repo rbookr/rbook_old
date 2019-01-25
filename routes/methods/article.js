@@ -48,8 +48,10 @@ module.exports = async (ctx,next)=>{
 
     let {subCatalogIdx,index} = hash_2_map[hash]
     
-    post.nextPage = ctx.Catalog[subCatalogIdx].list[index+1]
-    post.prePage = ctx.Catalog[subCatalogIdx].list[index-1]
+    if( ctx.Catalog){
+        post.nextPage = ctx.Catalog[subCatalogIdx].list[index+1]
+        post.prePage = ctx.Catalog[subCatalogIdx].list[index-1]
+    }
     
 
     /* 判断是否有密码 */

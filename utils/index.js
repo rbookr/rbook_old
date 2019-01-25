@@ -8,6 +8,8 @@ const loadCatalog = require("./loadCatalog.js")
 const loadAllCatalog = require("./loadAllCatalog.js")
 const readFile = require("./readFile.js")
 const git =require("./git.js")
+const getTreeData = require("./getTreeData.js")
+const getBookCatalog = require("./getBookCatalog.js")
 
 global.nav = {} // if nav[key] == string   subnav[key] 就是 对应的obj
 global.subnav = {}  // subnav[key] = md5_str  md5_map_path[ md5_str] 就是对应的路径
@@ -178,5 +180,8 @@ module.exports = {
     loadCatalog,
     loadAllCatalog,
     readFile,
-    git
+    git,
+    blog:getTreeData,
+    book:getBookCatalog
+    
 }
