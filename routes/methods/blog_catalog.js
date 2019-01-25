@@ -7,8 +7,6 @@ module.exports = async function(ctx,next){
 
     Catalog.name = "Blog目录"
 
-
-    console.log(Catalog)
     await ctx.render('blog_catalog',{
         post:{
             head:{

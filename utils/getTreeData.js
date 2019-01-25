@@ -131,6 +131,12 @@ module.exports = async  ()=>{
     }
     dfs_catalog(Data)
 
+    //关于
+    hash_2_map['about'] = {
+        title:'关于',
+        path:'readme.md'
+    }
+
     return {
         Catalog:Data,
         hash_2_map

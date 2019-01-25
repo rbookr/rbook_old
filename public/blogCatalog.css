@@ -71,7 +71,7 @@
 .catalog-menu .cd-accordion-menu li.folder > label::before {
   content: "";
 }
-.catalog-menu .cd-accordion-menu li.file > a::before {
+.catalog-menu .cd-accordion-menu li.file > label::before {
   content: "";
 }
 .catalog-menu .cd-accordion-menu li.add > label::before {
