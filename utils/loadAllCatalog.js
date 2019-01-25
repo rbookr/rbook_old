@@ -3,7 +3,6 @@
 const fs = require("fs")
 const pathFn = require("path")
 const yaml = require("js-yaml")
-const loadCatalog = require("./loadCatalog.js")
 
 module.exports = async function(book_path){
 

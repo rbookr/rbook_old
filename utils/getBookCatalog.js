@@ -1,6 +1,11 @@
 const fs = require("fs")
 const pathFn = require("path")
-module.exports = async ()=>{
+const yaml = require("js-yaml")
+
+const loadCatalog = require("./loadCatalog.js")
+
+module.exports = async (book_path)=>{
+    book_path = book_path || C.book_path
     let nav = yaml.safeLoad( fs.readFileSync(book_path+'/nav.yaml',{encoding:'utf-8'}))
 
     var Catalog = []
