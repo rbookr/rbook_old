@@ -1,5 +1,5 @@
 if hash pm2 2>/dev/null; then
-    pm2 start pm2.yml
+    pm2 start $1.yml
 else
-    ./node_modules/.bin/pm2 start pm2.yml
+    ./node_modules/.bin/pm2 start $1.yml
 fi

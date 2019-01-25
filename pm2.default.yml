@@ -1,4 +1,5 @@
-name: RbookServer
+name: RbookServer # RblogServer
 script: bin/www
 env:
     PORT: 4040
+    model: book # 可以选blog
