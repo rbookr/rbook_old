@@ -82,3 +82,5 @@ site_config.yml
 site_config.blog.yml
 site_config.book.yml
 pm2.yml
+blog.yml
+book.yml
