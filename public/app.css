@@ -160,3 +160,14 @@ footer {
   background: #224795;
   transform: rotateX(90deg) translate3d(0, 0, 15px);
 }
+
+.viz-contain {
+  margin: 20px 0;
+  position: relative;
+}
+.viz-contain > svg {
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
