@@ -4,6 +4,11 @@ const fs = require('fs');
 const md5 = require("md5")
 
 
+/* 
+ * 分析一行数据 得到
+ * level,path,title,hash,url,password
+ * 级别,路径,标题,路径的hash,url地址,密码
+ * */
 const Parse_line = (line)=>{
 
     let regx = /^\ *[\*|-]\ /
@@ -32,6 +37,9 @@ const Parse_line = (line)=>{
     return {level,path,title,hash,url,password}
 }
 
+/* 
+ * 从一个文件里读取每一行
+ * */
 const ReadLine = (_path)=>{
     return new Promise( (res,rej)=>{
     

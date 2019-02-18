@@ -13,6 +13,7 @@ module.exports = async (ctx,next)=>{
         return
     }
 
+
     let _file_path = hash_2_map[hash].path
 
     debug(_file_path)
@@ -26,12 +27,13 @@ module.exports = async (ctx,next)=>{
     if( pathFn.extname(_file_path) !== '.md')
         _file_path += '.md'
 
-    if( !fs.existsSync( pathFn.join(C.book_path,_file_path))){
+    if( !fs.existsSync( pathFn.join(_file_path))){
         // 404
         await next()
         return
     }
 
+    console.log(hash_2_map[hash])
     let post = await redis.getArticle(hash)
 
     if (post.head == 'undefined'){
@@ -48,10 +50,10 @@ module.exports = async (ctx,next)=>{
 
     let {subCatalogIdx,index} = hash_2_map[hash]
     
-    if( ctx.Catalog){
-        post.nextPage = ctx.Catalog[subCatalogIdx].list[index+1]
-        post.prePage = ctx.Catalog[subCatalogIdx].list[index-1]
-    }
+    //if( ctx.Catalog){
+        //post.nextPage = ctx.Catalog[subCatalogIdx].list[index+1]
+        //post.prePage = ctx.Catalog[subCatalogIdx].list[index-1]
+    //}
     
 
     /* 判断是否有密码 */

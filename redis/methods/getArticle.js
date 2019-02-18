@@ -18,7 +18,7 @@ module.exports = async function(_id){
         if( pathFn.extname(_file_path) !== '.md')
             _file_path += '.md'
 
-        let _path = pathFn.join(C.book_path , _file_path)
+        let _path =  _file_path
         let {head,content} = await U.parseArticle(_path)
 
         let resolve_path = pathFn.relative(C.book_path,_path)
