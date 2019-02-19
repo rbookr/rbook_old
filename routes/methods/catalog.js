@@ -22,8 +22,7 @@ module.exports = async function(ctx,next){
         //page:{},
         //Catalog
     //})
-    let summary = U.loadSummary(C.book_path)
-    console.log(summary)
+    let summary = ctx.Catalog
     await ctx.render('catalog',{
         post:{
             head:{

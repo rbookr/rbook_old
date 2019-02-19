@@ -33,6 +33,8 @@ function dfs(_path,_parent){
     _parent.children = []
 
     let summary_array = _read(summary_path)
+    if(!summary_array)
+        return
 
     for( let item of summary_array){
         let {path,title,password,name} = item

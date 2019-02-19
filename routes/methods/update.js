@@ -6,7 +6,7 @@ module.exports = async (ctx,next)=>{
     let {password} = ctx.request.body
 
     if( password === C.token){
-        U.loadAllCatalog()    //更新目录
+        await redis.loadCatalog(true);
         ctx.body = "更新成功 " + (new Date()).toString()
         return
     }

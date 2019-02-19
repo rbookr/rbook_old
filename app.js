@@ -63,15 +63,9 @@ app.use(serve(__dirname + '/Rmarkdown/css'),{
     maxage:7*24*60*60*1000
 });
 
-//根据配置调用不同的route
-var route 
-var route_path  = pathFn.join(__dirname,'routes',model+'.js')
-if( fs.existsSync(route_path))
-    route = require(route_path)
-else
-    route = require('./routes/index')
-const cors = require('@koa/cors');
+var route = require('./routes/index')
 
+const cors = require('@koa/cors');
 
 // error handler
 onerror(app)

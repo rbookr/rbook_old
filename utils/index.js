@@ -4,12 +4,8 @@ const fs = require("fs")
 const md5 = require("md5")
 const yaml = require("js-yaml")
 const loadConfig = require("./loadConfig.js")
-const loadCatalog = require("./loadCatalog.js")
-const loadAllCatalog = require("./loadAllCatalog.js")
 const readFile = require("./readFile.js")
 const git =require("./git.js")
-const getTreeData = require("./getTreeData.js")
-const getBookCatalog = require("./getBookCatalog.js")
 
 
 const loadSummary = require("./TreeData/loadSummary.js")
@@ -180,11 +176,7 @@ module.exports = {
     imagePath_translate,
     parseArticle,
     loadConfig,
-    loadCatalog,
-    loadAllCatalog,
     readFile,
     git,
-    blog:getTreeData,
-    book:getBookCatalog,
     loadSummary
 }
