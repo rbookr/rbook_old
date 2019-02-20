@@ -166,3 +166,11 @@ footer {
   margin: 2rem 0;
   justify-content: center;
 }
+.tree-menu-container .cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tree-menu-container .cover img {
+  max-height: 200px;
+}

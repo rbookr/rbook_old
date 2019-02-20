@@ -187,3 +187,15 @@ footer {
     > svg {
     }
 }
+
+.tree-menu-container{
+    .cover {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        img {
+            max-height:200px;
+        }
+    }
+}
+

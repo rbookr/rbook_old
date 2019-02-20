@@ -7,7 +7,12 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 catalog-menu">
           <% for( let item of summary_array ){ %>
-            <div class="">
+            <div class="tree-menu-container">
+                <% if(item.cover) {%>
+                <div class="cover">
+                    <img src="<%= item.cover%>" alt="">
+                </div>
+                <% } %>
                 <tree-menu treedata='<%= JSON.stringify(item.catalog) %>'></tree-menu>
             </div>
          <% } %>
