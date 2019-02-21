@@ -38,7 +38,14 @@ function dfs(_path,_parent){
 
     for( let item of summary_array){
         let {path,title,password,name} = item
-        let real_path = pathFn.join(_path,path)
+        let real_path
+        try {
+            real_path = pathFn.join(_path,path)
+        }
+        catch(e){
+            console.error(summary_path)
+            throw(e)
+        }
 
         let stat = fs.statSync(real_path)
 
