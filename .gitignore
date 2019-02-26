@@ -84,3 +84,4 @@ site_config.book.yml
 pm2.yml
 blog.yml
 book.yml
+update.sh
