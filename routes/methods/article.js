@@ -33,7 +33,7 @@ module.exports = async (ctx,next)=>{
         return
     }
 
-    console.log(hash_2_map[hash])
+    //console.log(hash_2_map[hash])
     let post = await redis.getArticle(hash)
 
     if (post.head == 'undefined'){

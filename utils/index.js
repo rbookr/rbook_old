@@ -1,4 +1,5 @@
 const pathFn = require("path")
+const ejs = require("ejs")
 const Rmarkdown = require("../Rmarkdown/forNode.js")
 const fs = require("fs")
 const md5 = require("md5")
@@ -156,13 +157,27 @@ function splitOld(str){
     };
 }
 
+
+function ejsRenderFile(filepath){
+    return new Promise( (res,rej)=>{
+        ejs.renderFile(filepath, (err,str)=>{
+            if(err)
+                rej(err)
+            else
+                res(str)
+        })
+    })
+}
+
 async function parseArticle(_path){
     let exists = ensureFile(_path)
     if(!exists){
         throw('文件不存在!')
         return
     }
-    let con = await readFile(_path)
+    //let con = await readFile(_path)
+    let con = await ejsRenderFile(_path)
+
     let {data:head,content} = split(con)
     return {
         head:JSON.stringify( yaml.safeLoad(head)),
