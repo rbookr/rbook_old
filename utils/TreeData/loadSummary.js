@@ -3,6 +3,7 @@ const yaml = require("js-yaml")
 const pathFn = require("path")
 const md5 = require("md5")
 const getHashMap = require("./getHashMapFromSummaryData.js")
+const emojiToolkit = require("emoji-toolkit")
 
 function _read(summary_path){
     let summaryStr = fs.readFileSync(summary_path,{encoding:"utf-8"})
@@ -53,8 +54,8 @@ function dfs(_path,_parent){
         {
             let hash = md5(real_path)
             _parent.children.push({
-                name:title || name,
-                title:title || name,
+                name:emojiToolkit.shortnameToImage( title || name ),
+                title:emojiToolkit.shortnameToImage( title || name ),
                 url:`/article/${hash}`,
                 path:real_path,
                 hash,
@@ -62,7 +63,7 @@ function dfs(_path,_parent){
         }
         else if( stat.isDirectory()){ //是目录
             var new_data = {
-                name:title
+                name: emojiToolkit.shortnameToImage( title || name )
             }
 
             dfs(real_path,new_data)

@@ -1004,6 +1004,11 @@ emitter-listener@^1.1.1:
   dependencies:
     shimmer "^1.2.0"
 
+emoji-toolkit@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.npm.taobao.org/emoji-toolkit/download/emoji-toolkit-5.0.3.tgz#ec57022789eb23ff174162e74f38ee7392cdefbd"
+  integrity sha1-7FcCJ4nrI/8XQWLnTzjuc5LN770=
+
 error-inject@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/error-inject/download/error-inject-1.0.0.tgz#e2b3d91b54aed672f309d950d154850fa11d4f37"
