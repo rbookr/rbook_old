@@ -1,7 +1,7 @@
 const fs = require("fs")
 const pathFn = require("path")
 const router = require('koa-router')()
-const Rmarkdown = require("../Rmarkdown/forNode.js")
+const Rmarkdown = require("../markdown-r/index.js")
 
 const loadCatalog = require("./middle/loadCatalog.js")
 

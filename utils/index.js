@@ -1,6 +1,6 @@
 const pathFn = require("path")
 const ejs = require("ejs")
-const Rmarkdown = require("../Rmarkdown/forNode.js")
+const Rmarkdown = require("../markdown-r/index.js")
 const fs = require("fs")
 const md5 = require("md5")
 const yaml = require("js-yaml")

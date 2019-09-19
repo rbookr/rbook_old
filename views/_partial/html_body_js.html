@@ -2,3 +2,20 @@
   <% for (let link of config.js) {%>
     <script src="<%- link %>"></script>
   <% }%>
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+        //-<!--$表示行内元素，$$表示块状元素 -->
+        inlineMath: [ ['$','$'], ["\\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\\[","\\]"] ],
+        processEscapes: true
+        },
+        "HTML-CSS": { 
+          availableFonts: ["STIX","TeX"] ,
+          showMathMenu:false
+        }
+      });
+  </script>
+  <script async src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js"></script>

@@ -59,7 +59,7 @@ app.use(serve(__dirname + '/public'),{
 });
 
 //serve files from ./public:
-app.use(serve(__dirname + '/Rmarkdown/css'),{
+app.use(serve(__dirname + '/markdown-r/assets'),{
     maxage:7*24*60*60*1000
 });
 
