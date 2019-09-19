@@ -63,6 +63,7 @@ app.use(serve(__dirname + '/markdown-r/assets'),{
     maxage:7*24*60*60*1000
 });
 
+
 var route = require('./routes/index')
 
 const cors = require('@koa/cors');
@@ -73,9 +74,18 @@ onerror(app)
 //404
 app.use( async (ctx,next)=>{
     await next();
-    if( ctx.status === 404){ await ctx.render('404',{
+
+    if( ctx.status === 404){ 
+        console.log( /js\.map/i.test(ctx.path))
+        if( /js\.map$/i.test(ctx.path)){
+            ctx.body = "404"
+            return
+        }
+
+        await ctx.render('404',{
             page:{},
-            post:{}
+            post:{},
+            config:C
         })
     }
 })
