@@ -200,3 +200,76 @@ footer {
     }
 }
 
+
+.markdown-body .blackboard {
+    strong {
+        color:#ccc;
+    }
+}
+
+.markdown-body .toc-body {
+    $title-height:46px;
+    position: fixed;
+    right:30px;
+    top:20px;
+    border:1px solid #d2d2d2;
+    background: #f8f8f8;
+    padding:0;
+    border-radius: 2px;
+    width: 230px;
+    &.toc-content-hidden {
+        .toc-content {
+            display: none;
+        }
+        .toc-title{
+            h3 {
+                display: none;
+            }
+            &:after{
+                content: '\f106';
+            }
+        }
+        width: 2*20px+20px;//left*2+after-size
+    }
+    .toc-title{
+        height: $title-height;
+        text-align: center;
+        width: 100%;
+        background: #ccc;
+        border-bottom:1px solid #d2d2d2;
+        padding: 10px 0;
+        cursor: pointer;
+        h3 {
+            margin: 0;
+            position: relative;
+        }
+
+        &:after {
+            font-family:'FontAwesome';
+            background: lighten($color: #ccc, $amount: 10%);
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 2px;
+            content: '\f107';
+            display:block;
+            //float: right;
+            position: absolute;
+            right: 20px;
+            top:10px;
+        }
+        &:hover:after{
+            background: lighten($color: #ccc, $amount: 30%);
+        }
+    }
+
+    .toc-content {
+        padding: 1em;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    ul {
+        margin-left:0;
+    }
+}

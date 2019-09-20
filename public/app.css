@@ -193,3 +193,55 @@ footer {
   align-items: center; }
   .tree-menu-container .cover img {
     max-height: 200px; }
+
+.markdown-body .blackboard strong {
+  color: #ccc; }
+
+.markdown-body .toc-body {
+  position: fixed;
+  right: 30px;
+  top: 20px;
+  border: 1px solid #d2d2d2;
+  background: #f8f8f8;
+  padding: 0;
+  border-radius: 2px;
+  width: 230px; }
+  .markdown-body .toc-body.toc-content-hidden {
+    width: 60px; }
+    .markdown-body .toc-body.toc-content-hidden .toc-content {
+      display: none; }
+    .markdown-body .toc-body.toc-content-hidden .toc-title h3 {
+      display: none; }
+    .markdown-body .toc-body.toc-content-hidden .toc-title:after {
+      content: '\f106'; }
+  .markdown-body .toc-body .toc-title {
+    height: 46px;
+    text-align: center;
+    width: 100%;
+    background: #ccc;
+    border-bottom: 1px solid #d2d2d2;
+    padding: 10px 0;
+    cursor: pointer; }
+    .markdown-body .toc-body .toc-title h3 {
+      margin: 0;
+      position: relative; }
+    .markdown-body .toc-body .toc-title:after {
+      font-family: 'FontAwesome';
+      background: #e6e6e6;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 2px;
+      content: '\f107';
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 10px; }
+    .markdown-body .toc-body .toc-title:hover:after {
+      background: white; }
+  .markdown-body .toc-body .toc-content {
+    padding: 1em;
+    width: 100%;
+    overflow-x: auto; }
+  .markdown-body .toc-body ul {
+    margin-left: 0; }
