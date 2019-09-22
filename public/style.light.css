@@ -20,51 +20,10 @@
   border-bottom: 0;
   border-left: 0;
 }
-.highlight .code {
-  width: 95%;
-}
-.highlight .code pre {
-  border: 0;
-}
-code {
-  color: #f0f9ff;
-  padding: 0 0.1875rem;
-  margin: 0 0.125rem;
-  border-radius: 0.1875rem;
-  background-color: #f0e8df;
-}
 @media only screen and (max-width: 414px) {
   .highlight pre {
     font-size: 0.75rem;
   }
-}
-html,
-body {
-  color: #555;
-  background-color: #fff;
-  font-size: 100%; /* add PX (or original value) as backup */
-  font-size: 100%;
-}
-a {
-  color: #f0f9ff;
-}
-a:hover {
-  text-decoration: none;
-  color: #fff;
-  background-color: #f0f9ff;
-  transition: all 0.25s;
-  cursor: pointer;
-}
-strong {
-  color: #555;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #555;
 }
 .site-header {
   padding: 2.5rem 0;
