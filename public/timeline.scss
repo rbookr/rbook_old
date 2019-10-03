@@ -1,0 +1,45 @@
+$nodeSize : 30px;
+.timeline {
+    ul {
+        li {
+          text-align: left;
+            position: relative;
+            padding-left: 50px;
+            list-style-type: none;
+            margin: 0;
+            display: block;
+            border: 1px solid transparent;
+            h3 {
+                margin: 2px;
+            }
+            .content {
+                padding: 20px;
+            }
+            i {
+
+                position: absolute;
+                left:-$nodeSize/4;
+                font-weight: 900;
+                font-family: 'Ubuntu Mono', monospace !important;
+                border-radius: 50%;
+                color: #5fb878;
+                border: 2px solid #5fb878;
+                height: $nodeSize;
+                width: $nodeSize;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #fff;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                left:5px;
+                display: block;
+                background-color: #e6e6e6e6;
+                height: 100%;
+                width:2px;
+            }
+        }
+    }
+}

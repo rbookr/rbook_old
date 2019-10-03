@@ -34,6 +34,7 @@ router.use( async function(ctx,next){
 router.get('/article/:hash', require("./methods/article.js"))
 router.get('/',loadCatalog,require("./methods/catalog.js"))
 router.get('/about',require("./methods/about.js"))
+router.get('/history',require("./methods/history.js"))
 
 /* 更新 */
 router.post('/update',require("./methods/update.js"))

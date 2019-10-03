@@ -1,0 +1,36 @@
+<%- include('_partial/header', {
+  headerType: 'post',
+  post: post
+}) %>
+<article>
+    <div class="container typo">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-info text-muted">
+                    <div class="post-content markdown-body">
+                        <div class="timeline">
+                            <ul>
+
+                                <% for (var idx in history){ %>
+                                <li>
+                                    <i><%= history.length-idx %></i>
+                                    <% var his = history[idx] %>
+                                    <h3><%= his[0] %></h3>
+                                    <div class="content">
+                                        <pre><%= his[1] %></pre>
+                                        <pre class="change_files"><%= change_files[idx] %></pre>
+                                    </div>
+
+                                </li>
+                                <% } %>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<%- include('_partial/footer') %>
