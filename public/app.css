@@ -51,6 +51,9 @@ body .markdown-body pre code {
   font-family: "Ubuntu Mono" !important;
 }
 
+.timeline {
+  font-style: normal;
+}
 .timeline ul li {
   text-align: left;
   position: relative;
