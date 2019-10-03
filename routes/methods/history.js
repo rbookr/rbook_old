@@ -25,10 +25,10 @@ module.exports = async (ctx,next)=>{
       change_files = []
       for(let i = 0;i<20;i++){
         change_files.push(
-          execSync(`git --no-pager log --format="" --name-status -n 1 --skip=${i}`,{
+          execSync(`git --no-pager log --format="% " --name-status -n 1 --skip=${i}`,{
             cwd:C.book_path,
             encoding:'utf-8'
-          })
+          }).trim()
         )
       }
 
