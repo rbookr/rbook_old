@@ -44,7 +44,7 @@ module.exports = async (ctx,next)=>{
     page:{},
     post:{
       head:{
-        title:'历史记录'
+        title:'历史记录[近20条]'
       }
     },
     history,
