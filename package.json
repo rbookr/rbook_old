@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@koa/cors": "^2.2.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "debug": "^2.6.3",
     "ejs": "^2.6.2",
     "emoji-toolkit": "^5.0.3",
